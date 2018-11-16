@@ -53,7 +53,18 @@ c. Type the following command to create all 20 folders at once and hit **enter**
 	c. The ``verify[MSSnumber_ID].txt`` file also created during migration from a ``.img`` file to a ``.E01`` file (e.g., ``verify1297_24.txt``)
 	d. The ``fiwalk.xml`` file
 	
-You can either copy and paste the relevant files into their folder or use the command line to move files (instructions forthcoming).
+You can either copy and paste the relevant files into their folder or use the command line to move files.
+
+*Command line way to move files*::
+
+	cp [MSS_ID]/*.E01 [MSS_ID]/*.xml [MSS_ID]/*.txt [new netID folder]/[directory made folder]
+	
+*To loop and do all the files at once using a 'for' loop*::
+	
+	for i in {[ID]..[ID]}
+		do
+		cp ./[MSS_ID]_$i/*.E01 ./[MSS_ID]_$i/*.txt ./[MSS_ID]_$i/*.xml ./[new netID folder]/[MSS_ID]_$i
+		done
 
 ------------
 Create a Bag:
