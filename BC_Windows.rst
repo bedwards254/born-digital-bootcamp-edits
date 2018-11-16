@@ -43,7 +43,9 @@ To switch from Windows to BitCurator:
 	
 11. Hit **enter**. The BitCurator GUI will launch.
 
-*Note*: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Note**: 
 On the right computer, the steps are a bit different. 
 
 ------------------------------------------------------
