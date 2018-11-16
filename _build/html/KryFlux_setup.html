@@ -1,0 +1,225 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Transferring data from floppy disks using the KryoFlux &#8212; born_digital_bootcamp 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Migrating KryoFlux image files in preparation for ingest" href="img_migration.html" />
+    <link rel="prev" title="Welcome to born_digital_bootcamp’s documentation!" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="transferring-data-from-floppy-disks-using-the-kryoflux">
+<h1>Transferring data from floppy disks using the KryoFlux<a class="headerlink" href="#transferring-data-from-floppy-disks-using-the-kryoflux" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="before-you-begin">
+<h2>Before you begin:<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Make sure the Digital Archives’ Lab workstation is not connected to the internet.</strong> Unplug the yellow ethernet cord at the back of the computer.</li>
+<li>As you unpack the KryoFlux, pay attention to the labels on the data cable and the KryoFlux enclosure. These will help ensure that the floppy disk drive and the KryoFlux are connected correctly.</li>
+<li>As you are setting up the KryoFlux, avoid placing any drives on the metal shelves over the workstations.</li>
+</ul>
+</div>
+<div class="section" id="set-up-instructions">
+<h2>Set-up instructions:<a class="headerlink" href="#set-up-instructions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Using the data cable, connect the KryoFlux to the correct floppy disk drive.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>The data cable has three connectors: one for the KryoFlux; one for 3.5” floppy disk drives; and one for 5.25” floppy disk drives. Each connector on the cable is clearly labelled.</li>
+<li>The data cable’s red wire signifies pin 1. When connecting the data cable to the KryoFlux, be sure to align the red wire with the <strong>Pin 1</strong> label on the KryoFlux enclosure.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Using the USB cable, connect the KryoFlux to the lab workstation.</li>
+</ol>
+<p><strong>Check that the associated driver is correct:</strong></p>
+<ol class="arabic simple" start="3">
+<li>In the Windows Search Box, type <cite>device manager</cite> and hit <strong>enter</strong>.</li>
+<li>From the list, select <strong>Universal Serial Bus Controllers</strong>. If you see <strong>KryoFlux Disk System</strong> listed here, you can skip to step 11.</li>
+<li>If you do not see <strong>KryoFlux Disk System</strong> listed, select <strong>Ports (COM &amp; LPT)</strong>.</li>
+<li>Right-click on <strong>Bossa Program Port</strong>.</li>
+<li>Select <strong>Update driver software</strong>.</li>
+<li>Select <strong>Browse my computer for driver software</strong>.</li>
+<li>Select <strong>Let me pick from a list of device drivers on my computer</strong>.</li>
+<li>At this stage you should see <strong>KryoFlux Disk System</strong> listed. Select it and hit <strong>Next</strong>. You should see the following confirmation message: <strong>Windows has sucessfully updated your driver software</strong>. Hit <strong>Close</strong>.</li>
+</ol>
+</div>
+<div class="section" id="complete-kryoflux-set-up">
+<h2>Complete KryoFlux set-up:<a class="headerlink" href="#complete-kryoflux-set-up" title="Permalink to this headline">¶</a></h2>
+<p><strong>NOTE:</strong> All terminal commands are case-sensitive.</p>
+<ol class="arabic simple" start="11">
+<li>Type <cite>cmd</cite> into the Windows Search Box to open a terminal window.</li>
+<li>Type the following command into the terminal window in order to navigate to the DTC folder and hit <strong>enter</strong>:</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>\<span class="o">..</span>\<span class="s2">&quot;Program Files (x86)&quot;</span>\<span class="n">kryoflux_2</span><span class="o">.</span><span class="mi">51</span><span class="n">_windows</span>\<span class="n">dtc</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="13">
+<li>Type the following command and hit <strong>enter</strong></li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dtc</span> <span class="o">-</span><span class="n">c2</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> The resulting prompt will likely say: <strong>Control command rejected by the device. CM: maxtrack = 83</strong>.</p>
+<ol class="arabic simple" start="14">
+<li>Ensure that the power cable is plugged in and connect the power adaptor to the back of the floppy disk drive.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>The power adaptor has two connectors: the smaller one is for 3.5” floppy disk drives and the larger one is for 5.25” floppy disk drives. Both are clearly labelled.</li>
+<li>When working with the 5.25” drive, in particular, be careful to make sure that the adaptor is properly aligned.</li>
+<li>When disconnecting the adaptors, grip the white plastic piece and not the wires, as these are quite fragile and easily come loose if mishandled.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="15">
+<li>Insert a floppy disk.</li>
+<li>Re-type the following command and hit <strong>enter</strong>:</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dtc</span> <span class="o">-</span><span class="n">c2</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> The resulting prompt will likely say something like: <strong>CM: maxtrack = 83</strong>.</p>
+</div>
+<div class="section" id="capture-stream-files">
+<h2>Capture stream files:<a class="headerlink" href="#capture-stream-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="17">
+<li>Ensure that the Digital Archives hard drive dock is powered on.</li>
+<li>Type the following command and hit <strong>enter</strong>:</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dtc</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">fJ</span><span class="p">:</span>\<span class="n">digitalArchives</span>\<span class="n">diskImages</span>\<span class="p">[</span><span class="n">collectionName</span><span class="p">]</span><span class="n">_diskImages</span>\<span class="p">[</span><span class="n">MSS</span><span class="c1">#_ID]\[MSS#_ID] -i0 -i4 -i9 -l8</span>
+</pre></div>
+</div>
+<p><em>For example</em>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dtc</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">fJ</span><span class="p">:</span>\<span class="n">digitalArchives</span>\<span class="n">diskImages</span>\<span class="n">Lomax_diskImages</span>\<span class="mi">785</span><span class="n">_01</span>\<span class="mi">785</span><span class="n">_01</span> <span class="o">-</span><span class="n">i0</span> <span class="o">-</span><span class="n">i4</span> <span class="o">-</span><span class="n">i9</span> <span class="o">-</span><span class="n">l8</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> You may need to double check the drive letter associated with the Digital Archives hard drive dock, as it may not always be <code class="docutils literal"><span class="pre">J:</span></code>. If necessary, substitute the correct drive letter at the beginning of the file path.
+19. Imaging will begin. Progress will be logged in the terminal window.</p>
+</div>
+<div class="section" id="verify-correct-encoding-format">
+<h2>Verify correct encoding format:<a class="headerlink" href="#verify-correct-encoding-format" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="20">
+<li>Review the terminal output to determine which encoding format is correct:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Incorrect formats will register as <code class="docutils literal"><span class="pre">unformatted</span></code>.</li>
+<li>The correct format will be listed as <code class="docutils literal"><span class="pre">OK</span></code>.</li>
+<li>If MFM is the correct format, use <code class="docutils literal"><span class="pre">-i4</span></code> in step 21.</li>
+<li>If Apple DOS 400/800 is the correct format, use <code class="docutils literal"><span class="pre">-i9</span></code> in step 21.</li>
+<li>If neither format is correct, make a note of this and set disk aside for further review at a later date.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="capture-correctly-encoded-disk-image">
+<h2>Capture correctly encoded disk image:<a class="headerlink" href="#capture-correctly-encoded-disk-image" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="21">
+<li>Type the following command and hit <strong>enter</strong>:</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dtc</span> <span class="o">-</span><span class="n">fJ</span><span class="p">:</span>\<span class="n">digitalArchives</span>\<span class="n">diskImages</span>\<span class="p">[</span><span class="n">collectionName</span><span class="p">]</span><span class="n">_diskImages</span>\<span class="p">[</span><span class="n">MSS</span><span class="c1">#_ID]\[MSS#_ID]</span>
+<span class="o">-</span><span class="n">i0</span> <span class="o">-</span><span class="n">fJ</span><span class="p">:</span>\<span class="n">digitalArchives</span>\<span class="n">diskImages</span>\<span class="p">[</span><span class="n">collectionName</span><span class="p">]</span><span class="n">_diskImages</span>\<span class="p">[</span><span class="n">MSS</span><span class="c1">#_ID]\[MSS#_ID].img</span>
+<span class="o">-</span><span class="n">i</span><span class="p">[</span><span class="mi">4</span> <span class="ow">or</span> <span class="mi">9</span><span class="p">]</span> <span class="o">-</span><span class="n">m1</span> <span class="o">-</span><span class="n">l8</span>
+</pre></div>
+</div>
+<p><em>For example</em>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dtc</span> <span class="o">-</span><span class="n">fJ</span><span class="p">:</span>\<span class="n">digitalArchives</span>\<span class="n">diskImages</span>\<span class="n">Lomax_diskImages</span>\<span class="mi">785</span><span class="n">_01</span>\<span class="mi">785</span><span class="n">_01</span> <span class="o">-</span><span class="n">i0</span> <span class="o">-</span>
+<span class="n">fJ</span><span class="p">:</span>\<span class="n">digitalArchives</span>\<span class="n">diskImages</span>\<span class="n">Lomax_diskImages</span>\<span class="mi">785</span><span class="n">_01</span>\<span class="mi">785</span><span class="n">_01</span><span class="o">.</span><span class="n">img</span> <span class="o">-</span><span class="n">i4</span> <span class="o">-</span><span class="n">m1</span> <span class="o">-</span><span class="n">l8</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="22">
+<li>Once imaging is complete, remove the floppy disk from the drive.</li>
+<li>Label the disk with its MSS#_ID. Be sure not to obscure any original labels.</li>
+</ol>
+</div>
+<div class="section" id="repeat-for-remaining-floppy-disks">
+<h2>Repeat for remaining floppy disks:<a class="headerlink" href="#repeat-for-remaining-floppy-disks" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="24">
+<li>Insert next floppy disk.</li>
+<li>Repeat from step 18.</li>
+</ol>
+<p><strong>Time-saving tip:</strong> Use the up arrow to page through commands that you have previously run in the terminal window. Once you have found the correct command, you can edit it as needed before running it again.</p>
+</div>
+<div class="section" id="disconnect-the-kryoflux">
+<h2>Disconnect the KryoFlux:<a class="headerlink" href="#disconnect-the-kryoflux" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="26">
+<li>Click the <strong>Safely remove hardware</strong> icon and select <strong>KryoFlux Disk System</strong>.</li>
+<li>Once it is safe to remove the KryoFlux, carefully disconnect the power (taking care not to pull on the wires), then the USB cable, and finally the data cable.</li>
+<li>Replace all components in the KryoFlux box and return to the cabinet.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to born_digital_bootcamp’s documentation!</a></li>
+      <li>Next: <a href="img_migration.html" title="next chapter">Migrating KryoFlux image files in preparation for ingest</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, dorawaugh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/KryFlux_setup.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

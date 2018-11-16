@@ -1,0 +1,136 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Migrating KryoFlux image files in preparation for ingest &#8212; born_digital_bootcamp 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Transferring data from floppy disks using the KryoFlux" href="KryFlux_setup.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="migrating-kryoflux-image-files-in-preparation-for-ingest">
+<h1>Migrating KryoFlux image files in preparation for ingest<a class="headerlink" href="#migrating-kryoflux-image-files-in-preparation-for-ingest" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="before-you-begin">
+<h2>Before you begin:<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>This workflow uses tools stored as part of the BitCurator suite. If necessary, restart the Digital Archives Lab workstation and boot to the BitCurator hard drive.</li>
+<li>Ensure that the Digital Archives Lab workstation is not connected to the Internet by unplugging the ethernet cable.</li>
+</ul>
+</div>
+<div class="section" id="locate-existing-image-files">
+<h2>Locate existing image files:<a class="headerlink" href="#locate-existing-image-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Ensure that the Digital Archives hard drive dock is powered on.</li>
+<li>Open a terminal window but right-clicking anywhere on the Desktop and selecting <strong>Open Terminal</strong>.</li>
+<li>Navigate to the directory in which existing image files are stored:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>In the terminal window, type <cite>cd</cite>.</li>
+<li>Double-click the correct volume in the left-hand toolbar.</li>
+<li>Drag and drop the folder containing the existing image files into the terminal window. This will auto-populate the correct path for you.</li>
+<li>Hit <strong>enter</strong>.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="migrate-existing-raw-disk-image-to-e01-file-using-ewfacquire">
+<h2>Migrate existing raw disk image to E01 file using ewfacquire:<a class="headerlink" href="#migrate-existing-raw-disk-image-to-e01-file-using-ewfacquire" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="4">
+<li>Calculate an MD5 checksum for first existing raw disk image file. In the terminal, type the following command and hit <strong>enter</strong>:</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">md5sum</span> <span class="o">./</span><span class="p">[</span><span class="n">MSS</span><span class="c1">#_ID]/[MSS#_ID].img</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>In the terminal, type the following command and hit <strong>enter</strong>:</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ewfacquirestream</span> <span class="o">./</span><span class="p">[</span><span class="n">MSS</span><span class="c1">#_ID]/[MSS#_ID].img -C [MSS#_ID] -D [Description of media]</span>
+<span class="o">-</span><span class="n">e</span> <span class="p">[</span><span class="n">your</span> <span class="n">name</span><span class="p">]</span> <span class="o">-</span><span class="n">E</span> <span class="p">[</span><span class="n">Collection</span> <span class="n">name</span><span class="p">]</span> <span class="o">-</span><span class="n">f</span> <span class="n">encase6</span> <span class="o">-</span><span class="n">m</span> <span class="n">removeable</span> <span class="o">-</span><span class="n">M</span> <span class="n">logical</span> <span class="o">-</span><span class="n">l</span> <span class="n">log_</span><span class="p">[</span><span class="n">MSS</span><span class="c1">#_ID]</span>
+<span class="o">-</span><span class="n">t</span> <span class="o">./</span><span class="p">[</span><span class="n">MSS</span><span class="c1">#_ID]/[MSS#_01].e01 &gt; ./[MSS#_ID]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>Review the MD5 checksum generated using the <code class="docutils literal"><span class="pre">ewfaquirestream</span></code> command; ensure it matches the MD5 checksum generated using the <code class="docutils literal"><span class="pre">md5sum</span></code> command.</li>
+</ol>
+</div>
+<div class="section" id="repeat-for-remaining-raw-disk-images">
+<h2>Repeat for remaining raw disk images:<a class="headerlink" href="#repeat-for-remaining-raw-disk-images" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="7">
+<li>Repeat from step 4.</li>
+</ol>
+<p><strong>Time-saving tip:</strong> Use the up arrow to page through commands that you have previously run in the terminal window. Once you have found the correct command, you can edit it as needed before running it again.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="KryFlux_setup.html" title="previous chapter">Transferring data from floppy disks using the KryoFlux</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, dorawaugh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/img_migration.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
