@@ -57,13 +57,13 @@ You can either copy and paste the relevant files into their folder or use the co
 
 *Command line way to move files*::
 
-	cp [MSS_ID]/*.E01 [MSS_ID]/*.xml [MSS_ID]/*.txt [new netID folder]/[directory made folder]
+	cp [MSSnumber_ID]/*.E01 [MSSnumber_ID]/*.xml [MSSnumber_ID]/*.txt [new netID folder]/[directory made folder]
 	
 *To loop and do all the files at once using a 'for' loop*::
 	
 	for i in {[ID]..[ID]}
 		do
-		cp ./[MSS_ID]_$i/*.E01 ./[MSS_ID]_$i/*.txt ./[MSS_ID]_$i/*.xml ./[new netID folder]/[MSS_ID]_$i
+		cp ./[MSSnumber_ID]_$i/*.E01 ./[MSSnumber_ID]_$i/*.txt ./[MSSnumber_ID]_$i/*.xml ./[new netID folder]/[MSSnumber_ID]_$i
 		done
 
 ------------
