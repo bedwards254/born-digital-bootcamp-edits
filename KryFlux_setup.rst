@@ -44,6 +44,12 @@ Complete KryoFlux set-up:
 
   cd ..\..\"Program Files (x86)"\kryoflux_2.51_windows\dtc
 
+**NOTE:** For the coputer on the right in the lab, the file path should be as follows:
+
+::
+
+  cd ..\..\"Program Files (x86)"\kryoflux_3.00_windows\dtc
+
 13. Type the following command and hit **enter** 
 
 ::
