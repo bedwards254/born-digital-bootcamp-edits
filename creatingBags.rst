@@ -61,6 +61,7 @@ You can either copy and paste the relevant files into their folder or use the co
 	[new netID folder]/[directory made folder]
 	
 *For example*::
+	
 	cp 123_01/*.E01 123_01/*.xml 123_01/*.txt bedwa/123_01
 	
 *To loop and do all the files at once using a 'for' loop*::
@@ -72,6 +73,7 @@ You can either copy and paste the relevant files into their folder or use the co
 		done
 		
 *For example*::
+
 	for i in {01..05}
 		do
 		cp ./123_$i/*.E01 ./123_$i/*.xml ./123_$i/*.txt ./bedwa/123_$i
