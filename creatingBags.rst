@@ -60,12 +60,21 @@ You can either copy and paste the relevant files into their folder or use the co
 	cp [MSSnumber_ID]/*.E01 [MSSnumber_ID]/*.xml [MSSnumber_ID]/*.txt 
 	[new netID folder]/[directory made folder]
 	
+*For example*::
+	cp 123_01/*.E01 123_01/*.xml 123_01/*.txt bedwa/123_01
+	
 *To loop and do all the files at once using a 'for' loop*::
 	
 	for i in {[ID]..[ID]}
 		do
 		cp ./[MSSnumber_ID]_$i/*.E01 ./[MSSnumber_ID]_$i/*.txt ./[MSSnumber_ID]_$i/*.xml 
 		./[new netID folder]/[MSSnumber_ID]_$i
+		done
+		
+*For example*::
+	for i in {01..05}
+		do
+		cp ./123_$i/*.E01 ./123_$i/*.xml ./123_$i/*.txt ./bedwa/123_$i
 		done
 
 ------------
