@@ -27,7 +27,7 @@
 * Creating Application: From the drop-down menu, select the application
 used to create the disk image. For all of our optical disks, this will be *Guymager (BitCurator 1.0) 0.7.3-1*.
 * Original Environment Software: Type *none* in all three Original Environment Software fields.
-* Hardware - Name: Type *CD* or *DVD*.
+* Hardware - Name: Type *Optical disc*.
 * Hardware - Type: Select *removable media* from drop-down menu.
 * Other information: Type *Imaged using Guymager in BitCurator environment*.
 21.	Complete Rights Metadata:
