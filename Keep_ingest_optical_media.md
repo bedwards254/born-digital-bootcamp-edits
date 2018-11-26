@@ -25,13 +25,13 @@
 ### The following fields should be completed:
 * Imaging Date: Enter the date on which you imaged the disk.
 * Creating Application: From the drop-down menu, select the application
-used to create the disk image. For all of our optical disks, this will be Guymager (BitCurator 1.0) 0.7.3-1.
-* Original Environment Software: Type none in all three Original Environment Software fields.
-* Hardware - Name: Type CD or DVD.
-* Hardware - Type: Select removable media from drop-down menu.
-* Other information: Type Imaged using Guymager in BitCurator environment.
+used to create the disk image. For all of our optical disks, this will be *Guymager (BitCurator 1.0) 0.7.3-1*.
+* Original Environment Software: Type *none* in all three Original Environment Software fields.
+* Hardware - Name: Type *CD* or *DVD*.
+* Hardware - Type: Select *removable media* from drop-down menu.
+* Other information: Type *Imaged using Guymager in BitCurator environment*.
 21.	Complete Rights Metadata:
    1. The following field should be completed:
-* Access Status: Select 13: Metadata only from the drop-down menu.
+* Access Status: Select *13: Metadata only* from the drop-down menu.
 22.	Hit Save.
 
