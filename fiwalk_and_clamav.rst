@@ -24,32 +24,29 @@ Run Fiwalk with the ClamAV plugin:
 4. In the terminal, type the following command and hit **enter**:
 
 ::
-
-  	fiwalk -c clamconfig.txt -X /media/bcadmin/New\ 	
-	Volume/digitalArchives/diskImages/
-	[collectionName]_diskImages/[MSSnumber_ID]/fiwalk.xml 
-	/media/bcadmin/New\ Volume/digitalArchives/diskImages
-	/[collectionName]_diskImages/[MSSnumber_ID]/
-	[disk image filename with extension]
+	for i in [MSSnumber]_{ID..ID}
+		do
+  		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ 	
+		Volume1/digitalArchives/diskImages/
+		[collectionName]_diskImages/[MSSnumber]_$i/fiwalk.xml 
+		/media/bcadmin/New\ Volume1/digitalArchives/diskImages
+		/[collectionName]_diskImages/[MSSnumber]_$i/[MSSnumber]_$i.img
+		done
 
 *For example*::
-
-  	fiwalk -c clamconfig.txt -X /media/bcadmin/New\ 	
-	Volume/digitalArchives/diskImages/Mackey_diskImages/1297_01/
-	fiwalk.xml /media/bcadmin/New\ Volume/digitalArchives/
-	diskImages/Mackey_diskImages/1297_01/1297_01.E01
+	for i in 123_{01..06}
+		do
+  		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ 	
+		Volume/digitalArchives/diskImages/Mackey_diskImages/1297_$i/
+		fiwalk.xml /media/bcadmin/New\ Volume/digitalArchives/
+		diskImages/Mackey_diskImages/1297_$i/1297_$i.E01
+		done
 	
 ------------------
 Review fiwalk.xml:
 ------------------
 5. Once you've run the command listed above, you should find a **fiwalk.xml** file in the same folder as your disk image. Open **fiwalk.xml**.
-6. For each file listed in **fiwalk.xml**, review the ``<clamav>`` tags. As long as the file is not infected with any viruses, their contents will be ``0``. If you notice that one or more files are contaminated, consult the digital archivist.
+6. For each file listed in **fiwalk.xml**, review the ``<clamav_infected>`` tags. As long as the file is not infected with any viruses, their contents will be ``0``. If you notice that one or more files are contaminated, consult the digital archivist.
 
----------------------------------
-Repeat for remaining disk images:
----------------------------------
-7. For each remaining disk image, repeat from step 4.
-
-**Time-saving tip:** Use the up arrow to page through commands that you have previously run in the terminal window. Once you have found the correct command, you can edit it as needed before running it again. 
 
   
