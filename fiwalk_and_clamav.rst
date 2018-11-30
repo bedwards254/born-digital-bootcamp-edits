@@ -21,9 +21,8 @@ Run Fiwalk with the ClamAV plugin:
 
   	cd /home/bcadmin/.fiwalk
 
-4. In the terminal, type the following command and hit **enter**:
+4. In the terminal, type the following command and hit **enter**::
 
-::
 	for i in [MSSnumber]_{ID..ID}
 		do
   		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ 	
@@ -34,6 +33,7 @@ Run Fiwalk with the ClamAV plugin:
 		done
 
 *For example*::
+
 	for i in 123_{01..06}
 		do
   		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ 	
