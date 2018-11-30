@@ -57,6 +57,9 @@ Run the script:
 *This will run the MD5 checksum, the migration to E01 format, and verify the checksum for img folders/files 01 through 06 in one command.* 
 
 4. **SAVE** the file and close it. 
+
+	*If you do not save the file, the script will not run correctly*
+
 5. In the terminal, navigate to the Desktop using
 
 ::
