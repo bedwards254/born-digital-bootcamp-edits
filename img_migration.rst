@@ -19,85 +19,42 @@ Locate existing image files:
 2. Ensure that the Digital Archives hard drive is mounted inside BitCurator. If necessary, double-click the **New Volume** icon in the toolbar on the left-hand side of the screen. Once the Digital Archives hard drive is mounted, a **New Volume** icon will appear on the Desktop.
 3. Double-click the **New Volume** icon on the Desktop and navigate to the **[collection]_diskImages** folder.
 4. Open a terminal window but right-clicking anywhere on the Desktop and selecting **Open Terminal**.
-5. Navigate to the directory in which existing image files are stored:
+5. Navigate to the directory in which existing image files are stored
 
- - In the terminal window, type:
- 
- ::
- 
- 	cd ../../media/bcadmin/New\ Volume/digitalArchives/diskImages/
-	Mackey_diskImages
- 
- - Hit **enter**.
- 
--------------------------------------------------------
-Calculate the MD5 checksum for the existing image file:
--------------------------------------------------------
+---------------
+Run the script:
+---------------
 
-4. Calculate and log the MD5 checksum for first existing raw disk image file. In the terminal, type the following command and hit **enter**:
+1. Locate *migration.bash* on the desktop and double-click. 
+2. The file should look like this: 
 
+:: 
+for i in [**MSSNumber**]_{**ID**..**ID**}
+	do
+	md5sum $i/$i.img >$i/imgMD5.txt
+	ewfacquire ./$i/$i.img -C "$i" -D "3.5 inch floppy disk" -e “[**netID**]” -E “[**collection title**]” -f "encase6" -m "removable" -M "logical" -N "Migration from img" -c "deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./$i/$i
+	ewfverify $i/$i.E01 >$i/verify$i.txt
+	done
 ::
 
-  	md5sum [MSSnumber_ID]/[MSSnumber_ID].img >[MSSnumber_ID]/imgMD5.txt
-	
-*For example*::
-
-	md5sum 1297_24/1297_24.img >1297_24/imgMD5.txt
-	
-This will create a new text file inside your folder that contains the MD5 checksum for the raw disk image.
-
------------------------------------------------------
-Migrate the existing raw disk image using ewfacquire:
------------------------------------------------------
-  
-5. In the terminal, type the following command and hit **enter**:
+3. Edit the information **bolded** above to match your collection information. 
+*For example*: 
 
 ::
+for i in 123_{01..06}
+	do md5sum $i/$i.img >$i/imgMD5.txt
+	ewfacquire ./$i/$i.img -C "$i" -D "3.5 inch floppy disk" -e "bedwa24" -E "Nathaniel Mackey papers" -f "encase6" -m "removable" -M "logical" -N "Migration from img" -c "deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./$i/$i
+	ewfverify $i/$i.E01 >$i/verify$i.txt
+	done::
 
-	ewfacquire ./[MSSnumber_ID]/[MSSnumber_ID].img -C ["MSSnumber_ID"] -D 	
-	["Description of media"] -e ["your netID"] -E ["Collection name"] -f 
-	"encase6" -m 	"removable" -M "logical" -N "Migration from img" -c 
-	"deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./[MSSnumber_ID]/
-	[MSSnumber_ID]
-	
-	
-*For example*::
+*This will run the MD5 checksum, the migration to E01 format, and verify the checksum for img folders/files 01 through 06 in one command.* 
 
-	ewfacquire ./1297_24/1297_24.img -C "1297_24" -D "3.5 inch floppy 
-	disk" -e "netID" -E "Nathaniel Mackey papers" -f "encase6" -m 
-	"removable" -M "logical" -N "Migration from img" -c "deflate" -o 0 
-	-S "1.4 GiB" -P 512 -g 64 -t ./1297_24/1297_24
-
-
-6. As prompted in the terminal window, hit **enter** five times. Look for acknowledgement that a new forensically packaged disk image has been successfully createdx: you should see an acquiry start and completion time, an MD5 hash (checksum) calculated over the data, and a confirmation message reading ``ewfacquire: SUCCESS``.
-	
-------------------------------------------
-Verify the new disk image using ewfverify:
-------------------------------------------
-
-7.	In the terminal, type the following command and hit **enter**:
+4. **SAVE** the file and close it. 
+5. In the terminal, navigate to the Desktop using
 
 ::
+cd Desktop
+::
 
-	ewfverify [MSSnumber_ID]/[MSSnumber_ID].E01 	
-	>[MSSnumber_ID]/verify[MSSnumber_ID].txt
-	
-*For example*::
-
-	ewfverify 1297_24/1297_24.E01 >1297_24/verify1297_01.txt
-	
-This will create another new text file inside your folder that contains verification information for the new forensically packaged disk image. Open and review the file to ensure that verification has been successful.
-
---------------------------------------------------------------------------
-Compare checksums for raw disk image and forensically packaged disk image:
---------------------------------------------------------------------------
-
-8. Open both the **MD5** and **verify** text files created at steps 4 and 7. Compare the first few characters in each MD5 hash to ensure that they match.
-
--------------------------------------
-Repeat for remaining raw disk images:
--------------------------------------
-
-7. Repeat from step 4.
-
-**Time-saving tip:** Use the up arrow to page through commands that you have previously run in the terminal window. Once you have found the correct command, you can edit it as needed before running it again.
+6. Type **bash migration.bash**
+7. Hold down **enter** until you are back to the original prompt. 
