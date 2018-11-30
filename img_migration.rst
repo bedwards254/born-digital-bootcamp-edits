@@ -34,7 +34,9 @@ Run the script:
 	for i in [MSSNumber]_{ID..ID}
 		do
 		md5sum $i/$i.img >$i/imgMD5.txt
-		ewfacquire ./$i/$i.img -C "$i" -D "3.5 inch floppy disk" -e “[netID]” -E “[collection title]” -f "encase6" -m "removable" -M "logical" -N "Migration from img" -c "deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./$i/$i
+		ewfacquire ./$i/$i.img -C "$i" -D "3.5 inch floppy disk" -e “[netID]” 
+		-E “[collection title]” -f "encase6" -m "removable" -M "logical" -N "Migration from img" 
+		-c "deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./$i/$i
 		ewfverify $i/$i.E01 >$i/verify$i.txt
 		done
 
@@ -46,7 +48,9 @@ Run the script:
 
 	for i in 123_{01..06}
 		do md5sum $i/$i.img >$i/imgMD5.txt
-		ewfacquire ./$i/$i.img -C "$i" -D "3.5 inch floppy disk" -e "bedwa24" -E "Nathaniel Mackey papers" -f "encase6" -m "removable" -M "logical" -N "Migration from img" -c "deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./$i/$i
+		ewfacquire ./$i/$i.img -C "$i" -D "3.5 inch floppy disk" -e "bedwa24" 
+		-E "Nathaniel Mackey papers" -f "encase6" -m "removable" -M "logical" 
+		-N "Migration from img" -c "deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./$i/$i
 		ewfverify $i/$i.E01 >$i/verify$i.txt
 		done
 
