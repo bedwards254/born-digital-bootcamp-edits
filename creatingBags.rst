@@ -22,22 +22,9 @@ Create folders:
 5. Move into the folder created at step 4.
 
 **NOTE:** Before beginning the process of creating bags, each forensically packaged disk image (.E01) must be placed with any supplemental files inside a folder named using the MSSnumber_ID (e.g., 1297_01). There are two ways to create these folders:
-
-*Option 1 (easy but tedious)* 
-	a. Create each folder one-by-one by right-clicking and selecting **New Folder**. 
-	b. Name each folder using the MSSnumber_ID.
-
-*Option 2 (fast but requires the command line)*
-	a. Launch a terminal window.
-	b. Navigate to the folder created at step 4 by typing the following command:
-
-::
-
-	cd ../../media/bcadmin/New\ Volume/digitalArchives/diskImages/
-	Mackey_diskImages/[your new folder]
 	
 	
-c. Type the following command to create all 20 folders at once and hit **enter**:
+a. Type the following command to create all 20 folders at once and hit **enter**:
 
 ::
 
@@ -64,7 +51,7 @@ You can either copy and paste the relevant files into their folder or use the co
 	
 	cp 123_01/*.E01 123_01/*.xml 123_01/*.txt bedwa/123_01
 	
-*To loop and do all the files at once using a 'for' loop*::
+*To do all the files at once using a 'for' loop*::
 	
 	for i in {[ID]..[ID]}
 		do
@@ -84,17 +71,26 @@ Create a Bag:
 ------------
 
 7. Launch a terminal window, if you don't already have one open.
-8. Type the following command into the terminal window in order to package your first disk image folder as a Bag and hit **enter**:
-
-::
-
-	bagit.py --md5 --sha1 --contact-name=[your netID] 	
-	./[MSSnumber_ID]
+8. Type the following command into the terminal window in order to package your first disk image folder as a Bag and hit **enter**::
+	bagit.py --md5 --sha1 --contact-name=[netID] ./[MSSnumber_ID]
 	
 *For example*::
+	bagit.py --md5 --sha1 --contact-name=bedwa24 ./123_01
 
-	bagit.py --md5 --sha1 --contact-name=netID 	
-	./1297_173
+
+*To do all the files at once using a 'for' loop*::
+	
+	for i in {[ID]..[ID]}
+		do
+		bagit.py --md5 --sha1 --contact-name=[netID] ./[MSSnumber]_$i
+		done
+		
+*For example*::
+
+	for i in {01..05}
+		do
+		bagit.py --md5 --sha1 --contact-name=bedwa24 ./123_$i
+		done
 	
 9. Wait for terminal prompt ($) to reappear.
 
@@ -111,6 +107,20 @@ Validate the Bag:
 *For example*::
 
 	bagit.py --validate ./1297_150
+	
+*To do all the files at once using a 'for' loop*::
+	
+	for i in {[ID]..[ID]}
+		do
+		bagit.py --validate ./[MSSnumber]_$i
+		done
+		
+*For example*::
+
+	for i in {01..05}
+		do
+		bagit.py --validate ./123_$i
+		done
 	
 11. Wait for a confirmation message that the Bag is valid.
 
