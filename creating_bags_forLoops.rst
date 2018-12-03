@@ -43,6 +43,12 @@ b. Type the following command to create all 20 folders at once and hit **enter**
 	
 You can either copy and paste the relevant files into their folder or use the command line to move files.
 
+a. Move to the main collection folder using ::
+
+	cd ../
+	
+b. Use the command line to copy the files
+
 *Command line way to move files*::
 
 	cp [MSSnumber_ID]/*.E01 [MSSnumber_ID]/*.xml [MSSnumber_ID]/*.txt 
@@ -56,7 +62,7 @@ You can either copy and paste the relevant files into their folder or use the co
 	
 	for i in {[ID]..[ID]}
 		do
-		cp ./[MSSnumber_ID]_$i/*.E01 ./[MSSnumber_ID]_$i/*.txt ./[MSSnumber_ID]_$i/*.xml 
+		cp ./[MSSnumber_ID]_$i/*.E01 ./[MSSnumber_ID]_$i/*.xml ./[MSSnumber_ID]_$i/*.txt 
 		./[new netID folder]/[MSSnumber_ID]_$i
 		done
 		
@@ -72,7 +78,13 @@ Create a Bag:
 ------------
 
 7. Launch a terminal window, if you don't already have one open.
-8. Type the following command into the terminal window in order to package your first disk image folder as a Bag and hit **enter**::
+8. Navigate back to the *NetID* folder, using
+
+::
+
+	cd [netID]
+	
+9. Type the following command into the terminal window in order to package your first disk image folder as a Bag and hit **enter**::
 
 ::
 	
@@ -88,13 +100,13 @@ Create a Bag:
 		bagit.py --md5 --sha1 --contact-name=bedwa24 ./123_$i
 		done
 	
-9. Wait for terminal prompt ($) to reappear.
+10. Wait for terminal prompt ($) to reappear.
 
 -----------------
 Validate the Bag:
 -----------------
 
-10. Type the following command in order to ensure that the newly created Bag is valid and hit **enter**:
+11. Type the following command in order to ensure that the newly created Bag is valid and hit **enter**:
 
 ::
 	
@@ -110,4 +122,4 @@ Validate the Bag:
 		bagit.py --validate ./123_$i
 		done
 	
-11. Wait for a confirmation message that the Bag is valid.
+12. Wait for a confirmation message that the Bag is valid.
