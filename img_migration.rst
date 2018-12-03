@@ -29,7 +29,7 @@ Run the script:
 
 :: 
 
-	cd /media/bcadmin/New\ Volume1/digitalArchives/diskImages/[collection]_diskImages/
+	cd /media/bcadmin/New\ Volume1/digitalArchives/diskImages/[collectionName]_diskImages/
 
 	for i in [MSSNumber]_{ID..ID}
 		do
