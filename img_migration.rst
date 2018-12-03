@@ -41,6 +41,7 @@ Run the script:
 		done
 
 3. Edit the information in brackets [ ] above to match your collection information. 
+
 *For example*: 
 
 ::
@@ -69,4 +70,4 @@ Run the script:
 
 
 6. Type **bash migration.bash**
-7. Hold down **enter** until you are back to the original prompt. 
+7. Hold down **enter** until you are back to the original prompt ($). 
