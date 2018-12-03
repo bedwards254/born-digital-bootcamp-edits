@@ -19,7 +19,6 @@ Locate existing image files:
 2. Ensure that the Digital Archives hard drive is mounted inside BitCurator. If necessary, double-click the **New Volume** icon in the toolbar on the left-hand side of the screen. Once the Digital Archives hard drive is mounted, a **New Volume** icon will appear on the Desktop.
 3. Double-click the **New Volume** icon on the Desktop and navigate to the **[collection]_diskImages** folder.
 4. Open a terminal window but right-clicking anywhere on the Desktop and selecting **Open Terminal**.
-5. Navigate to the directory in which existing image files are stored
 
 ---------------
 Run the script:
