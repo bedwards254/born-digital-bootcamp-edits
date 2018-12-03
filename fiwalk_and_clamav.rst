@@ -23,23 +23,22 @@ Run Fiwalk with the ClamAV plugin:
 
 4. In the terminal, type the following command and hit **enter**::
 
-	for i in [MSSnumber]_{ID..ID}
-		do
-  		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ 	
-		Volume1/digitalArchives/diskImages/
-		[collectionName]_diskImages/[MSSnumber]_$i/fiwalk.xml 
-		/media/bcadmin/New\ Volume1/digitalArchives/diskImages
-		/[collectionName]_diskImages/[MSSnumber]_$i/[MSSnumber]_$i.img
-		done
+	for i in [MSSnumber]_{ID..ID} *enter*
+		do *enter*
+		
+  		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ Volume1/digitalArchives/diskImages/
+		[collectionName]_diskImages/$i/fiwalk.xml /media/bcadmin/New\ Volume1/digitalArchives/diskImages/[collectionName]_diskImages/$i/$i.img *enter*
+		
+		done *enter*
 
 *For example*::
 
 	for i in 123_{01..06}
 		do
-  		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ 	
-		Volume/digitalArchives/diskImages/Mackey_diskImages/1297_$i/
-		fiwalk.xml /media/bcadmin/New\ Volume/digitalArchives/
-		diskImages/Mackey_diskImages/1297_$i/1297_$i.E01
+		
+  		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ Volume/digitalArchives/diskImages/Mackey_diskImages/$i/
+		fiwalk.xml /media/bcadmin/New\ Volume/digitalArchives/diskImages/Mackey_diskImages/$i/$i.E01
+		
 		done
 	
 ------------------
