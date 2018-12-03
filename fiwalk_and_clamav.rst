@@ -47,5 +47,7 @@ Review fiwalk.xml:
 5. Once you've run the command listed above, you should find a **fiwalk.xml** file in the same folder as your disk image. Open **fiwalk.xml**.
 6. For each file listed in **fiwalk.xml**, review the ``<clamav_infected>`` tags. As long as the file is not infected with any viruses, their contents will be ``0``. If you notice that one or more files are contaminated, consult the digital archivist.
 
+A quick way to search the XML file is to hit **Ctrl+F** on the keyboard and type in **"clamav_infected>** and hit enter. You can then type **1** to see if any infected files appear. 
+
 
   
