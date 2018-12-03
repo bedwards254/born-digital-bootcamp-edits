@@ -24,7 +24,8 @@ Create folders:
 **NOTE:** Before beginning the process of creating bags, each forensically packaged disk image (.E01) must be placed with any supplemental files inside a folder named using the MSSnumber_ID (e.g., 1297_01). There are two ways to create these folders:
 	
 	
-a. Type the following command to create all 20 folders at once and hit **enter**:
+a. In the folder you just created, right click and select **Open in Terminal**. 
+b. Type the following command to create all 20 folders at once and hit **enter**:
 
 ::
 
