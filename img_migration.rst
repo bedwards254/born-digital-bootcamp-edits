@@ -29,29 +29,41 @@ Run the script:
 
 :: 
 
+	cd /media/bcadmin/New\ Volume1/digitalArchives/diskImages/[collection]_diskImages/
 
 	for i in [MSSNumber]_{ID..ID}
 		do
+		
 		md5sum $i/$i.img >$i/imgMD5.txt
+		
 		ewfacquire ./$i/$i.img -C "$i" -D "3.5 inch floppy disk" -e “[netID]” 
 		-E “[collection title]” -f "encase6" -m "removable" -M "logical" -N "Migration from img" 
 		-c "deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./$i/$i
+		
 		ewfverify $i/$i.E01 >$i/verify$i.txt
+		
 		done
 
-3. Edit the information in brackets [ ] above to match your collection information. 
+3. Edit the information in brackets [ ] above to match your collection information. The ID numbers should equal
+the folder numbers you are wanting to migrate. 
 
 *For example*: 
 
 ::
 
-
+	cd /media/bcadmin/New\ Volume1/digitalArchives/diskImages/Mackey_diskImages/
+	
 	for i in 123_{01..06}
-		do md5sum $i/$i.img >$i/imgMD5.txt
+		do 
+		
+		md5sum $i/$i.img >$i/imgMD5.txt
+		
 		ewfacquire ./$i/$i.img -C "$i" -D "3.5 inch floppy disk" -e "bedwa24" 
 		-E "Nathaniel Mackey papers" -f "encase6" -m "removable" -M "logical" 
 		-N "Migration from img" -c "deflate" -o 0 -S "1.4 GiB" -P 512 -g 64 -t ./$i/$i
+		
 		ewfverify $i/$i.E01 >$i/verify$i.txt
+		
 		done
 
 *This will run the MD5 checksum, the migration to E01 format, and verify the checksum for img folders/files 01 through 06 in one command.* 
