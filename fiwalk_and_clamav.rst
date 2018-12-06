@@ -14,22 +14,20 @@ Before you begin:
 Run Fiwalk with the ClamAV plugin:
 ----------------------------------
 1. Ensure that the Digital Archives hard drive dock is powered on.
-2. Open a terminal window but right-clicking anywhere on the Desktop and selecting **Open Terminal**.
-3. In the terminal, type the following command and hit **enter**:
+2. Locate *fiwalk.bash* on the desktop and double-click. 
+3. The file should look like this: 
 
 ::
 
   	cd /home/bcadmin/.fiwalk
 
-4. In the terminal, type the following command and hit **enter**::
-
-	for i in [MSSnumber]_{ID..ID} *enter*
-		do *enter*
+	for i in [MSSnumber]_{ID..ID} 
+		do
 		
   		fiwalk -c clamconfig.txt -X /media/bcadmin/New\ Volume1/digitalArchives/diskImages/
 		[collectionName]_diskImages/$i/fiwalk.xml /media/bcadmin/New\ Volume1/digitalArchives/diskImages/[collectionName]_diskImages/$i/$i.img *enter*
 		
-		done *enter*
+		done
 
 *For example*::
 
@@ -40,6 +38,21 @@ Run Fiwalk with the ClamAV plugin:
 		fiwalk.xml /media/bcadmin/New\ Volume/digitalArchives/diskImages/Mackey_diskImages/$i/$i.E01
 		
 		done
+		
+4. **SAVE** the file and close it. 
+
+	*If you do not save the file, the script will not run correctly*
+
+5. Open a terminal window but right-clicking anywhere on the Desktop and selecting **Open Terminal**.
+6. In the terminal, navigate to the Desktop using
+
+::
+
+
+	cd Desktop
+
+
+7. Type **bash fiwalk.bash** and hit **enter**
 	
 ------------------
 Review fiwalk.xml:
