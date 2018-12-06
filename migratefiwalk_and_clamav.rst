@@ -30,7 +30,7 @@ Run Fiwalk with the ClamAV plugin:
 		done
 		
 4. Edit the information in brackets [ ] above to match your collection information. The ID numbers should equal
-the folder numbers you are wanting to migrate. 
+the folder numbers you are wanting to scan. 
 
 *For example*::
 
