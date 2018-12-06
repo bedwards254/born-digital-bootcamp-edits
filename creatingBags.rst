@@ -57,9 +57,9 @@ the folder numbers you are wanting to copy.
 		
 *For example*::
 
-	for i in {01..05}
+	for i in 123_{01..05}
 		do
-		cp ./123_$i/*.E01 ./123_$i/*.xml ./123_$i/*.txt ./bedwa/123_$i
+		cp ./123_$i/*.E01 ./123_$i/*.xml ./123_$i/*.txt ./bedwa/$i
 		done
 		
 9. In the terminal window, navigate to the desktop using 
