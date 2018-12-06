@@ -40,24 +40,20 @@ a. Type the following command to create all 20 folders at once and hit **enter**
 	c. The ``verify[MSSnumber_ID].txt`` file also created during migration from a ``.img`` file to a ``.E01`` file (e.g., ``verify1297_24.txt``)
 	d. The ``fiwalk.xml`` file
 	
-You can either copy and paste the relevant files into their folder or use the command line to move files.
+7. On the desktop, look for *copy.bash* and click on it to open. 
 
-*Command line way to move files*::
-
-	cp [MSSnumber_ID]/*.E01 [MSSnumber_ID]/*.xml [MSSnumber_ID]/*.txt 
-	[new netID folder]/[directory made folder]
+The file should look like this:
 	
-*For example*::
+::
 	
-	cp 123_01/*.E01 123_01/*.xml 123_01/*.txt bedwa/123_01
-	
-*To do all the files at once using a 'for' loop*::
-	
-	for i in {[ID]..[ID]}
+	for i in [MSSnumber]_{[ID]..[ID]}
 		do
 		cp ./[MSSnumber_ID]_$i/*.E01 ./[MSSnumber_ID]_$i/*.txt ./[MSSnumber_ID]_$i/*.xml 
 		./[new netID folder]/[MSSnumber_ID]_$i
 		done
+		
+8. Edit the information in brackets [ ] above to match your collection information. The ID numbers should equal
+the folder numbers you are wanting to copy. 
 		
 *For example*::
 
@@ -65,69 +61,48 @@ You can either copy and paste the relevant files into their folder or use the co
 		do
 		cp ./123_$i/*.E01 ./123_$i/*.xml ./123_$i/*.txt ./bedwa/123_$i
 		done
+		
+9. In the terminal window, navigate to the desktop using 
+
+:: 
+
+	cd Desktop
+
+10. Type in *bash copy.bash* and hit **enter**
 
 ------------
 Create a Bag:
 ------------
 
-7. Launch a terminal window, if you don't already have one open.
-8. Type the following command into the terminal window in order to package your first disk image folder as a Bag and hit **enter**::
-	bagit.py --md5 --sha1 --contact-name=[netID] ./[MSSnumber_ID]
-	
-*For example*::
-	bagit.py --md5 --sha1 --contact-name=bedwa24 ./123_01
+11. On the Desktop, locate the file *bagger.bash* and click to open it.
 
-
-*To do all the files at once using a 'for' loop*::
-	
-	for i in {[ID]..[ID]}
-		do
-		bagit.py --md5 --sha1 --contact-name=[netID] ./[MSSnumber]_$i
-		done
-		
-*For example*::
-
-	for i in {01..05}
-		do
-		bagit.py --md5 --sha1 --contact-name=bedwa24 ./123_$i
-		done
-	
-9. Wait for terminal prompt ($) to reappear.
-
------------------
-Validate the Bag:
------------------
-
-10. Type the following command in order to ensure that the newly created Bag is valid and hit **enter**:
+The file should look like this: 
 
 ::
-
-	bagit.py --validate ./[MSSnumber_ID]
 	
-*For example*::
-
-	bagit.py --validate ./1297_150
+	cd /media/bcadmin/New\ Volume1/digitalArchives/diskImages/[collectionName]_diskImages/[netID]
 	
-*To do all the files at once using a 'for' loop*::
-	
-	for i in {[ID]..[ID]}
+	for i in [MSSnumber]_{[ID]..[ID]}
 		do
-		bagit.py --validate ./[MSSnumber]_$i
+		
+		bagit.py --md5 --sha1 --contact-name=[netID] ./$i
+		bagit.py --validate ./$i
+		echo
+		
 		done
 		
 *For example*::
 
-	for i in {01..05}
+	for i in 123_{01..05}
 		do
-		bagit.py --validate ./123_$i
+		
+		bagit.py --md5 --sha1 --contact-name=bedwa24 ./$i
+		bagit.py --validate ./$i
+		echo
+		
 		done
+		
+12. **SAVE** the file and close it.
+	*If you do not save the file, it will not run correctly.* 
 	
-11. Wait for a confirmation message that the Bag is valid.
-
------------------------------
-Repeat for remaining folders:
------------------------------
-
-12. For all remaining folders, repeat from step 8.
-
-**Time-saving tip:** Use the up arrow to page through commands that you have previously run in the terminal window. Once you have found the correct command, you can edit it as needed before running it again.
+13. In the terminal window, type in *bash copy.bash* and hit **enter**
