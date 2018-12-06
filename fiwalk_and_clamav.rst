@@ -28,6 +28,9 @@ Run Fiwalk with the ClamAV plugin:
 		[collectionName]_diskImages/$i/fiwalk.xml /media/bcadmin/New\ Volume1/digitalArchives/diskImages/[collectionName]_diskImages/$i/$i.img *enter*
 		
 		done
+		
+4. Edit the information in brackets [ ] above to match your collection information. The ID numbers should equal
+the folder numbers you are wanting to migrate. 
 
 *For example*::
 
@@ -39,12 +42,12 @@ Run Fiwalk with the ClamAV plugin:
 		
 		done
 		
-4. **SAVE** the file and close it. 
+5. **SAVE** the file and close it. 
 
 	*If you do not save the file, the script will not run correctly*
 
-5. Open a terminal window but right-clicking anywhere on the Desktop and selecting **Open Terminal**.
-6. In the terminal, navigate to the Desktop using
+6. Open a terminal window but right-clicking anywhere on the Desktop and selecting **Open Terminal**.
+7. In the terminal, navigate to the Desktop using
 
 ::
 
@@ -52,13 +55,13 @@ Run Fiwalk with the ClamAV plugin:
 	cd Desktop
 
 
-7. Type **bash fiwalk.bash** and hit **enter**
+8. Type **bash fiwalk.bash** and hit **enter**
 	
 ------------------
 Review fiwalk.xml:
 ------------------
-5. Once you've run the command listed above, you should find a **fiwalk.xml** file in the same folder as your disk image. Open **fiwalk.xml**.
-6. For each file listed in **fiwalk.xml**, review the ``<clamav_infected>`` tags. As long as the file is not infected with any viruses, their contents will be ``0``. If you notice that one or more files are contaminated, consult the digital archivist.
+9. Once you've run the command listed above, you should find a **fiwalk.xml** file in the same folder as your disk image. Open **fiwalk.xml**.
+10. For each file listed in **fiwalk.xml**, review the ``<clamav_infected>`` tags. As long as the file is not infected with any viruses, their contents will be ``0``. If you notice that one or more files are contaminated, consult the digital archivist.
 
 **Time-saving tip:** A quick way to search the XML file is to hit **Ctrl+F** on the keyboard and type in **"clamav_infected>"** and hit enter. You can then type **1** after the end **>** to see if any infected files appear. 
 
