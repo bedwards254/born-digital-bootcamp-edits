@@ -14,7 +14,7 @@ Before you begin:
 Run Fiwalk with the ClamAV plugin:
 ----------------------------------
 1. Ensure that the Digital Archives hard drive dock is powered on.
-2. Locate *fiwalk.bash* on the desktop and double-click. 
+2. Locate **fiwalk.bash** on the desktop and double-click. 
 3. The file should look like this: 
 
 ::
