@@ -22,6 +22,8 @@ Create folders:
 5. Move into the folder created at step 4.
 
 **NOTE:** Before beginning the process of creating bags, each forensically packaged disk image (.E01) must be placed with any supplemental files inside a folder named using the MSSnumber_ID (e.g., 1297_01). There are two ways to create these folders:
+
+To get to the correct directory, in the netID folder you just created, right click and select **Open in Terminal**
 	
 	
 a. Type the following command to create all 20 folders at once and hit **enter**:
@@ -49,11 +51,13 @@ Copy files:
 The file should look like this:
 	
 ::
+
+	cd /media/bcadmin/New\ Volume1/digitalArchives/diskImages/[collectionName]_diskImages/
 	
 	for i in [MSSnumber]_{[ID]..[ID]}
 		do
-		cp ./[MSSnumber_ID]_$i/*.E01 ./[MSSnumber_ID]_$i/*.txt ./[MSSnumber_ID]_$i/*.xml 
-		./[new netID folder]/[MSSnumber_ID]_$i
+		cp ./$i/*.E01 ./$i/*.txt ./$i/*.xml 
+		./[new netID folder]/$i
 		done
 		
 8. Edit the information in brackets [ ] above to match your collection information. The ID numbers should equal
@@ -61,9 +65,11 @@ the folder numbers you are wanting to copy.
 		
 *For example*::
 
+	cd /media/bcadmin/New\ Volume1/digitalArchives/diskImages/test_diskImages/
+	
 	for i in 123_{01..05}
 		do
-		cp ./123_$i/*.E01 ./123_$i/*.xml ./123_$i/*.txt ./bedwa/$i
+		cp ./$i/*.E01 ./$i/*.xml ./$i/*.txt ./bedwa/$i
 		done
 		
 9. In the terminal window, navigate to the desktop using 
@@ -74,9 +80,9 @@ the folder numbers you are wanting to copy.
 
 10. Type in **bash copy.bash** and hit **enter**
 
-------------
-Create a Bag:
-------------
+--------------------------
+Create and Validate a Bag:
+--------------------------
 
 11. On the Desktop, locate the file **bagger.bash** and click to open it.
 
@@ -97,6 +103,8 @@ The file should look like this:
 		
 *For example*::
 
+	cd /media/bcadmin/New\ Volume1/digitalArchives/diskImages/test_diskImages/bedwa
+	
 	for i in 123_{01..05}
 		do
 		
@@ -111,4 +119,10 @@ The file should look like this:
 13. **SAVE** the file and close it.
 	*If you do not save the file, it will not run correctly.* 
 	
-14. In the terminal window, type in **bash bagger.bash** and hit **enter**
+14. In the terminal window, navigate to the desktop using 
+
+:: 
+
+	cd Desktop
+	
+15. Type in **bash bagger.bash** and hit **enter**
