@@ -68,13 +68,13 @@ the folder numbers you are wanting to copy.
 
 	cd Desktop
 
-10. Type in *bash copy.bash* and hit **enter**
+10. Type in **bash copy.bash** and hit **enter**
 
 ------------
 Create a Bag:
 ------------
 
-11. On the Desktop, locate the file *bagger.bash* and click to open it.
+11. On the Desktop, locate the file **bagger.bash** and click to open it.
 
 The file should look like this: 
 
@@ -101,8 +101,10 @@ The file should look like this:
 		echo
 		
 		done
+
+12. Edit the information located in the brackets [] to match your collection information. The ID numbers should equal the folder numbers you are wanting to bag. 
 		
-12. **SAVE** the file and close it.
+13. **SAVE** the file and close it.
 	*If you do not save the file, it will not run correctly.* 
 	
-13. In the terminal window, type in *bash copy.bash* and hit **enter**
+14. In the terminal window, type in **bash bagger.bash** and hit **enter**
