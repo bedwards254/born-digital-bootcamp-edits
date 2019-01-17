@@ -40,7 +40,11 @@ a. Type the following command to create all 20 folders at once and hit **enter**
 	c. The ``verify[MSSnumber_ID].txt`` file also created during migration from a ``.img`` file to a ``.E01`` file (e.g., ``verify1297_24.txt``)
 	d. The ``fiwalk.xml`` file
 	
-7. On the desktop, look for *copy.bash* and click on it to open. 
+-----------
+Copy files:
+-----------
+	
+7. On the desktop, look for **copy.bash** and click on it to open. 
 
 The file should look like this:
 	
